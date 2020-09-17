@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 17, 2020 at 10:17 PM
+-- Generation Time: Sep 17, 2020 at 11:09 PM
 -- Server version: 5.7.31-0ubuntu0.16.04.1
 -- PHP Version: 7.0.33-0ubuntu0.16.04.15
 
@@ -61,7 +61,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `address`, `image`, `status`) VALUES
-(40, 'jibin Paul', 'jibinpaul09@gmail.com', 'cc75768e6572b7043e727298f1503089', 'mukaleparambil, muttuchira, kottayam', '', 1),
+(40, 'jibin Paul', 'jibinpaul09@gmail.com', 'cc75768e6572b7043e727298f1503089', 'mukaleparambil, muttuchira, kottayam', '1600364273images.jpeg', 1),
 (41, 'tom jose', 'tom@gmail.com', '34b7da764b21d298ef307d04d8152dc5', 'tom villa, ernakulam, kerala', '', 0),
 (42, 'Thomas Paul', 'thomas@gmail.com', 'ef6e65efc188e7dffd7335b646a85a21', 'thomas villa, kottayam, kerala', '', 0),
 (43, 'Kiran R', 'kiran@gmail.com', 'b1a5b64256e27fa5ae76d62b95209ab3', 'kiran villa, ernakulam, kerala', '', 1),

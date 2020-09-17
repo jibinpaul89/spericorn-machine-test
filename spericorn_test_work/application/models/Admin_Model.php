@@ -17,35 +17,10 @@ class Admin_Model extends CI_Model
 		 //echo $this->db->last_query();exit;
 		 return $query->result_array();
 	}
-	public function get_category_details()
-	{
-
-		 $this->db->select('cat1.cat_id,cat1.cat_name,cat1.cat_image,cat1.cat_parent,cat1.status,cat2.cat_name as par_cat_name');
-		 $this->db->from('category cat1');
-		 $this->db->join('category cat2', 'cat1.cat_parent=cat2.cat_id','left' );
-		 $this->db->where('cat1.status',1);
-		 $query=$this->db->get();
-		 //echo $this->db->last_query();exit;
-		 return $query->result_array();
-
-	}
-
-	public function insertcategorydetails($data)
-	{
-		//print_r($data);exit;
-		$ins=$this->db->insert('category', $data);
-		//echo $this->db->last_query();exit;
-		if($ins) return $this->db->insert_id();
-		else return 0;
-	}
 
 
 
-public function delete_category($cat_id)
-{
-$this->db->delete('category', array('cat_id' => $cat_id));
-	return 1;
-}
+
 
 
 
@@ -68,7 +43,17 @@ public function validate_login($email,$password)
 	 return $query->result_array();
 }
 
-
+public function check_login($email,$password)
+{
+	 $this->db->select('id');
+	 $this->db->from('admin');
+	 $this->db->where('email',$email);
+	 $this->db->where('password',$password);
+	 $this->db->where('status',1);
+	 $query=$this->db->get();
+	 //echo $this->db->last_query();exit;
+	 return $query->num_rows();
+}
 
 
 }

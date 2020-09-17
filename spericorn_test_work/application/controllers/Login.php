@@ -75,7 +75,7 @@ private $hashkey = null;
 							}
 							else{
 								$data['login_error']='You cannot login.You are in inactivate state.';
-							
+
 							}
 
 
@@ -101,7 +101,7 @@ $password=$this->session->userdata('password');
 if($email!="" && $password!="")
 {
 
-$validate_status = $this->Admin_Model->validate_login($email,md5($password));
+$validate_status = $this->Admin_Model->check_login($email,$password);
 
 if($validate_status<1)
 {

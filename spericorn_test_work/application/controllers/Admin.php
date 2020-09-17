@@ -15,6 +15,20 @@ class Admin extends CI_Controller {
 		$this->load->library('upload');
 
 		$this->load->model('Admin_Model');
+
+		if($this->session->userdata('email')=='' || $this->session->userdata('password')=='')
+		{
+			redirect(base_url().'login/logout');
+		}
+		$validate_status = $this->Admin_Model->check_login($this->session->userdata('email'),$this->session->userdata('password'));
+
+		if($validate_status<1)
+		{
+			redirect(base_url().'login/logout');
+		}
+
+
+
 	}
 
 public function manage()
